@@ -4,5 +4,4 @@ const Router = express.Router();
 
 Router.get('/', bookcollectionController.getByStatus);
 
-
 module.exports= Router;

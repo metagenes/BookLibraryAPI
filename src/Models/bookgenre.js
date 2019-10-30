@@ -4,7 +4,7 @@ module.exports = {
     getByGenre: genrecheck => {
         return new Promise ((resolve, reject) => {
             db.query(
-                `SELECT * FROM bookcollection where genre =?`,
+                `SELECT * FROM bookcollection where genre =? ORDER by title ASC`,
                 [genrecheck],
                 (err, response) => {
                     if (!err) {

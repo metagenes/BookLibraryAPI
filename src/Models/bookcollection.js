@@ -4,7 +4,7 @@ module.exports = {
     getByStatus: statuscheck => {
         return new Promise ((resolve,reject) => {
             db.query(
-                `SELECT * FROM bookcollection where status = ?`,
+                `SELECT * FROM bookcollection where status = ? ORDER by title ASC`,
                 [statuscheck],
                 (err,response) => {
                     if (!err){
@@ -17,5 +17,4 @@ module.exports = {
         });
 
     },
-
 };

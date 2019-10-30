@@ -4,7 +4,7 @@ module.exports = {
     getAll: () => {
         return new Promise ((resolve, reject) => {
             db.query(
-                `SELECT * FROM bookcollection`,
+                `SELECT * FROM bookcollection order by title ASC`,
                
                 (err, response) => {
                     if (!err) {
