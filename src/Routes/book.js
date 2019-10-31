@@ -3,11 +3,11 @@ const bookController = require('../Controllers/book');
 const Router = express.Router();
 
 // GET users listing.
-Router.get('/get', bookController.getAll);
+Router.get('/', bookController.getAll);
 // POST users
-Router.post('/post', bookController.post);
+Router.post('/', bookController.post);
 // // UPDATE users
-Router.put('/update', bookController.putByID);
+Router.put('/', bookController.putByID);
 // DELETE users
-Router.delete('/delete', bookController.deleteByID);
+Router.delete('/', bookController.deleteByID);
 module.exports = Router;
