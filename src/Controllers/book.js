@@ -11,6 +11,19 @@ module.exports = {
         .then(response => formRes.getAll (res, response,200))
         .catch (err => console.log(err));
     },
+    orderBook: (req,res) => {
+        const { book_id, user_id, book_at } = req.body;
+            const today = new Date;
+            const dataOrder = {
+				book_id,
+				book_at: today,
+				user_id,
+			};
+        bookModel
+        .orderBook(dataOrder)
+        .then(response => formRes.orderBook (res, response,200))
+        .catch (err => console.log(err));
+    },
     post: (req,res) => {
          const body = {
               ...req.body
@@ -35,6 +48,24 @@ module.exports = {
         bookModel
         .putByID(body,id)
         .then(response => formRes.put (res, response,200))
+        .catch (err => console.log(err));
+    },
+    returnBook: (req,res) => {
+        const { book_id, user_id, return_at } = req.body;
+            const today = new Date;
+            const dataReturn = {
+				return_at: today,
+			};
+        bookModel
+        .returnBook(dataReturn,book_id,user_id)
+        .then(response => formRes.put (res, response,200))
+        .catch (err => console.log(err));
+    },
+    searchBook: (req,res) => {
+        const statuscheck = req.query.search;
+        bookModel
+        .searchBook(statuscheck)
+        .then(response => formRes.searchBook (res, response,200))
         .catch (err => console.log(err));
     },
 };

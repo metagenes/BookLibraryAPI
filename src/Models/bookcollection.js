@@ -4,7 +4,7 @@ module.exports = {
     getByStatus: statuscheck => {
         return new Promise ((resolve,reject) => {
             db.query(
-                `SELECT * FROM bookcollection where status = ? ORDER by title ASC`,
+                `SELECT * FROM bookcollection where genre = ? ORDER by title ASC`,
                 [statuscheck],
                 (err,response) => {
                     if (!err){
@@ -31,5 +31,22 @@ module.exports = {
                 }
             );
         });
-    }
+    },
+    searchByGenre: statuscheck => {
+        return new Promise ((resolve,reject) => {
+            db.query(
+                `SELECT * FROM bookcollection WHERE genre REGEXP CONCAT ('\', ?,'\') `,
+                [statuscheck],
+                (err,response) => {
+                    if (!err){
+                        resolve (response);
+                    } else {
+                        reject (err);
+                    }
+                }
+            );
+        });
+    
+    },
+    
 };

@@ -1,13 +1,22 @@
 const express = require('express');
 const bookController = require('../Controllers/book');
 const Router = express.Router();
-
-// GET users listing.
+const verifyToken = require ('../Configs/Auth');
+// GET  listing.
 Router.get('/', bookController.getAll);
-// POST users
+// POST 
 Router.post('/', bookController.post);
-// // UPDATE users
+// // UPDATE 
 Router.put('/', bookController.putByID);
-// DELETE users
+// DELETE 
 Router.delete('/', bookController.deleteByID);
+// POST borrow
+Router.post('/borrow', bookController.orderBook);
+// Return book
+Router.put('/return', bookController.returnBook);
+//search
+Router.get('/search',bookController.searchBook);
 module.exports = Router;
+
+
+// localhost:8000/book/order

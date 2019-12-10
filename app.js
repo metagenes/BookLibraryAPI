@@ -4,11 +4,13 @@ const logger = require ('morgan');
 const bodyParser = require ('body-parser');
 const router = require ('./src/Routes/index');
 const app = express();
+const cors = require('cors');
 
 app.listen (8000,() =>{
     console.log('Server is Running');
 });
 
+app.use (cors());
 app.use (logger('dev'));
 app.use (bodyParser.json());
 app.use (bodyParser.urlencoded({extended: false}));
