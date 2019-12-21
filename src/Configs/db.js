@@ -2,10 +2,10 @@ require("dotenv").config()
 
 const mysql = require('mysql');
 
-const db = mysql.createPool({
-	host: process.env.DB_HOST,
-	user: process.env.DB_USER,
-	password: process.env.DB_PASSWORD,
-	database: process.env.DB_NAME
+const db = mysql.createConnection({
+	host: 'remotemysql.com',
+	user: 'BdVnpDxf3K',
+	password: '3PstTjbiHS',
+    database: 'BdVnpDxf3K',
 });
 module.exports = db;
