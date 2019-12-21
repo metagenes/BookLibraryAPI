@@ -1,7 +1,7 @@
 const express = require('express');
 const bookController = require('../Controllers/book');
 const Router = express.Router();
-const verifyToken = require ('../Configs/Auth');
+// const verifyToken = require ('../Configs/Auth');
 // GET  listing.
 Router.get('/', bookController.getAll);
 // POST 
