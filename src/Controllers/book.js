@@ -4,13 +4,13 @@ const formRes = require ('../Helpers/formRes')
 const Router = express.Router();
 
 module.exports = {
-    getAll: (req,res) => {
-        const id = req.query.genre;
-        bookModel
-        .getAll(id)
-        .then(response => formRes.getAll (res, response,200))
-        .catch (err => console.log(err));
-    },
+    // getAll: (req,res) => {
+    //     const id = req.query.genre;
+    //     bookModel
+    //     .getAll(id)
+    //     .then(response => formRes.getAll (res, response,200))
+    //     .catch (err => console.log(err));
+    // },
     orderBook: (req,res) => {
         const { book_id, user_id, book_at } = req.body;
             const today = new Date;

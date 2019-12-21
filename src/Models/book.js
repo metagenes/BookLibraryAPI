@@ -1,21 +1,21 @@
 const db = require ('../Configs/db');
 
 module.exports = {
-    getAll: () => {
-        return new Promise ((resolve, reject) => {
-            db.query(
-                `SELECT * FROM bookcollection order by title ASC`,
+    // getAll: () => {
+    //     return new Promise ((resolve, reject) => {
+    //         db.query(
+    //             `SELECT * FROM bookcollection order by title ASC`,
                
-                (err, response) => {
-                    if (!err) {
-                        resolve (response);
-                    } else {
-                        reject (err);
-                    }
-                }
-            );
-        });
-    },
+    //             (err, response) => {
+    //                 if (!err) {
+    //                     resolve (response);
+    //                 } else {
+    //                     reject (err);
+    //                 }
+    //             }
+    //         );
+    //     });
+    // },
     post: body => {
         return new Promise ((resolve, reject) => {
           db.query ('INSERT INTO bookcollection SET ?', [body], (err, response) => {
