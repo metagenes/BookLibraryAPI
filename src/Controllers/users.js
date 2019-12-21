@@ -1,7 +1,7 @@
 
 const userModel = require('../Models/users');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const formRes = require ('../Helpers/formRes')
 
 const validateEmail = em => {

@@ -13,14 +13,14 @@ module.exports = {
         };
         res.json(form);
     },
-    // getAll:(res, response, status) => {
-    //     const form = {
-    //         status,
-    //         message:"book list",
-    //         response,
-    //     };
-    //     res.json(form);
-    // },
+    getAll:(res, response, status) => {
+        const form = {
+            status,
+            message:"book list",
+            response,
+        };
+        res.json(form);
+    },
      delete:(res,response,status) =>{
          const form = {
              status,
