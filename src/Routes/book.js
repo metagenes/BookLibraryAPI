@@ -1,6 +1,9 @@
 const express = require('express');
 const bookController = require('../Controllers/book');
 const Router = express.Router();
+const cors = require("cors")
+const app = express()
+app.use(cors())
 // const verifyToken = require ('../Configs/Auth');
 // GET  listing.
 Router.get('/', bookController.getAll);

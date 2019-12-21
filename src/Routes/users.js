@@ -3,7 +3,9 @@ const userController = require('../Controllers/users');
 // const verifyToken = require('../Configs/Auth');
 
 const Router = express.Router();
-
+const cors = require("cors")
+const app = express()
+app.use(cors())
 
 // POST LOGIN 
 Router.post('/login', userController.loginUser);
