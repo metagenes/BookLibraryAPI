@@ -5,10 +5,12 @@ const bodyParser = require ('body-parser');
 const router = require ('./src/Routes/index');
 const app = express();
 const cors = require('cors');
+const serverPORT = 3306
+const PORT = process.env.PORT || serverPORT
 
-app.listen (8000,() =>{
-    console.log('Server is Running');
-});
+app.listen(PORT, () => {
+    console.log(`Server is running on port: ${PORT}`)
+  })
 
 app.use (cors());
 app.use (logger('dev'));
