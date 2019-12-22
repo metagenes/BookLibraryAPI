@@ -31,7 +31,7 @@ module.exports = {
 								message: `User with email ${email} Not Found`,
 							});
 						} else {
-							if (bcrypt.compareSync(password, response[0].password)) {
+							// if (bcrypt.compareSync(password, response[0].password)) {
                             if (password === response[0].password) {
 								// const token = jwt.sign(
 								jwt.sign({ response: response[0] },
@@ -51,7 +51,7 @@ module.exports = {
 								});
 							}
 						}
-					}})
+					})
 					.catch(err => {
 						res.json(err);
 					});
@@ -90,8 +90,8 @@ module.exports = {
 						if (result.length > 0) {
 							res.status(400).json({ msg: 'User Already Exist!' });
 						} else {
-							bcrypt.hash(password, 10, (err, hash) => {
-								userData.password = hash;
+							// bcrypt.hash(password, 10, (err, hash) => {
+							// 	userData.password = hash;
 								userModel
 									.registerUser(userData)
 									.then(result => {
@@ -100,7 +100,7 @@ module.exports = {
 									.catch(err => {
 										res.json(err);
 									});
-							});
+							// });
 						}
 					})
 					.catch(err => {
