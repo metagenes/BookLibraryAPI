@@ -3,7 +3,7 @@ const db = require('../Configs/db');
 
 module.exports = {
 	// @route POST
-	loginUser: email => {
+	loginUser: (email) => {
 		return new Promise((resolve, reject) => {
 			// const query = `SELECT * FROM user WHERE email = ?  `;
 
