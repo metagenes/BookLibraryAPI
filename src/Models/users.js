@@ -5,16 +5,27 @@ module.exports = {
 	// @route POST
 	loginUser: email => {
 		return new Promise((resolve, reject) => {
-			const query = `SELECT * FROM user WHERE email = ?  `;
+			// const query = `SELECT * FROM user WHERE email = ?  `;
 
-			db.query(query, [email], (err, result) => {
-				if (!err) {
-					resolve(result);
-				} else {
-					reject(err);
+			// db.query(query, [email], (err, result) => {
+			// 	if (!err) {
+			// 		resolve(result);
+			// 	} else {
+			// 		reject(err);
+			// 	}
+			db.query(
+				`SELECT * FROM user WHERE email = ?`,
+				[email],
+				(err, response) => {
+					if (!err) {
+						resolve (response);
+					} else {
+						reject (err);
+					}
 				}
+			);
 			});
-		});
+		// });
 	},
 	// @route POST
 	getUserByEmail: email => {
